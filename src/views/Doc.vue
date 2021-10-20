@@ -24,25 +24,25 @@
   </div>
 </template>
 <script setup lang="ts">
-import TopNav from '@/components/TopNav.vue';
-import { inject, Ref } from 'vue';
+import TopNav from "@/components/TopNav.vue";
+import { inject, Ref } from "vue";
 
-const asideVisible = inject<Ref<boolean>>("asideVisible");
+const asideVisible = inject<Ref<boolean>>( "asideVisible" );
 </script>
 
 <style scoped lang="scss">
 aside {
   background: lightblue;
   width: 150px;
-  padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 70px;
+  padding: 70px 16px 16px;
 
   > h2 {
     margin-bottom: 4px;
   }
+
   > ol {
     > li {
       padding: 4px 0;
