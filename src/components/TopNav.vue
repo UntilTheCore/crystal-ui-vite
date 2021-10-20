@@ -1,6 +1,7 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleAsideVisible">LOGO</div>
+    <span class="toggle-btn" @click="toggleAsideVisible"></span>
+    <div class="logo">LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -43,10 +44,21 @@ const toggleAsideVisible = inject<() => void>( "toggleAsideVisible" );
     }
   }
 
+  > .toggle-btn {
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-color: skyblue;
+  }
+
   @media screen and (max-width: 500px) {
+
+    > .toggle-btn {
+      display: inline-block;
+    }
+
     > .menu {
       display: none;
-      //visibility: hidden;
     }
 
     > .logo {

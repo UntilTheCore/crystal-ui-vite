@@ -2,7 +2,7 @@
   <div>
     <TopNav />
     <div class="content">
-      <aside v-show="asideVisible">
+      <aside :style="{display: asideVisible ? 'block' : 'none'}">
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -25,9 +25,31 @@
 </template>
 <script setup lang="ts">
 import TopNav from "@/components/TopNav.vue";
-import { inject, Ref } from "vue";
+import { inject, reactive, Ref, watch } from "vue";
+
+type Data = {
+  clientWidth: number,
+}
 
 const asideVisible = inject<Ref<boolean>>( "asideVisible" );
+const setAsideVisible = inject<(status: boolean) => void>( "setAsideVisible" );
+
+const data = reactive<Data>( {
+  clientWidth: document.documentElement.clientWidth
+} );
+
+window.addEventListener( "resize", () => {
+  console.log( "resize" );
+  data.clientWidth = document.documentElement.clientWidth;
+} );
+
+
+watch( () => data.clientWidth, (newClientWidth) => {
+  console.log( newClientWidth );
+  setAsideVisible && setAsideVisible( newClientWidth > 500 );
+} );
+
+
 </script>
 
 <style scoped lang="scss">
@@ -38,6 +60,7 @@ aside {
   top: 0;
   left: 0;
   padding: 70px 16px 16px;
+  display: block;
 
   > h2 {
     margin-bottom: 4px;
@@ -47,6 +70,12 @@ aside {
     > li {
       padding: 4px 0;
     }
+  }
+}
+
+@media screen and(max-width: 500px) {
+  aside {
+    display: none;
   }
 }
 </style>
