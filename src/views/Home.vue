@@ -5,8 +5,8 @@
       <h1>轱辘UI</h1>
       <h2>一个厉害的 UI 框架</h2>
       <p class="actions">
-        <a>GitHub</a>
-        <a>开始</a>
+        <a href="https://github.com/UntilTheCore/crystal-ui-vite" target="_blank">GitHub</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
@@ -15,4 +15,26 @@
 import TopNav from '@/components/TopNav.vue';
 </script>
 <style lang="scss" scoped>
+@use 'sass:math';
+.banner {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: lightgreen;
+  > .actions {
+    padding: 8px 0;
+    a {
+      margin: 0 8px;
+      background: #fff;
+      display: inline-block;
+      $h: 28px;
+      height: $h;
+      line-height: $h;
+      border-radius: math.div($h, 2);
+      padding: 0 8px;
+    }
+  }
+}
 </style>
