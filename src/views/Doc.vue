@@ -20,7 +20,11 @@
         </ol>
       </aside>
       <main>
-        <router-view></router-view>
+        <router-view v-slot="{ Component }">
+          <transition name="mode-fade" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </main>
     </div>
   </div>
@@ -37,7 +41,7 @@ const asideVisible = inject<Ref<boolean>>("asideVisible");
 const setAsideVisible = inject<(status: boolean) => void>("setAsideVisible");
 
 const data = reactive<Data>({
-  clientWidth: document.documentElement.clientWidth
+  clientWidth: document.documentElement.clientWidth,
 });
 
 const onResize = () => {
@@ -82,5 +86,18 @@ aside {
   aside {
     display: none;
   }
+}
+
+.mode-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.mode-fade-leave-active {
+  transition: all 0.6s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.mode-fade-enter-from,
+.mode-fade-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
 }
 </style>
