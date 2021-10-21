@@ -1,6 +1,6 @@
 <template>
   <div class="topnav">
-    <span class="toggle-btn" @click="toggleAsideVisible"></span>
+    <span class="toggle-btn" @click.stop="toggleAsideVisible"></span>
     <div class="logo">LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
@@ -12,16 +12,21 @@
 <script setup lang="ts">
 import { inject } from "vue";
 
-const toggleAsideVisible = inject<() => void>( "toggleAsideVisible" );
+const toggleAsideVisible = inject<() => void>("toggleAsideVisible");
 </script>
 
 <style lang="scss" scoped>
 .topnav {
   background: pink;
   display: flex;
-  padding: 15px;
-  position: relative;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
+  height: var(--navbar-height);
+  padding: 0 15px;
 
   > .logo {
     height: 20px;
@@ -29,7 +34,7 @@ const toggleAsideVisible = inject<() => void>( "toggleAsideVisible" );
     margin-right: auto;
     cursor: pointer;
     max-height: 20px;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   > .menu {
@@ -52,7 +57,6 @@ const toggleAsideVisible = inject<() => void>( "toggleAsideVisible" );
   }
 
   @media screen and (max-width: 500px) {
-
     > .toggle-btn {
       display: inline-block;
     }
@@ -67,5 +71,4 @@ const toggleAsideVisible = inject<() => void>( "toggleAsideVisible" );
     }
   }
 }
-
 </style>

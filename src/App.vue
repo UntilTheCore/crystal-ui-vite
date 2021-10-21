@@ -8,7 +8,7 @@
 import { ref, provide, readonly } from "vue";
 import router from "@/router";
 
-const asideVisible = ref( document.documentElement.clientWidth > 500 );
+const asideVisible = ref(document.documentElement.clientWidth > 500);
 const toggleAsideVisible = () => {
   asideVisible.value = !asideVisible.value;
 };
@@ -17,13 +17,13 @@ const setAsideVisible = (status: boolean) => {
   asideVisible.value = status;
 };
 
-provide( "asideVisible", readonly( asideVisible ) );
-provide( "toggleAsideVisible", toggleAsideVisible );
-provide( "setAsideVisible", setAsideVisible );
+provide("asideVisible", readonly(asideVisible));
+provide("toggleAsideVisible", toggleAsideVisible);
+provide("setAsideVisible", setAsideVisible);
 
 router.afterEach(() => {
   // 在页面 宽度 < 500 的情况下，路由切换后隐藏侧边栏
-  if(document.documentElement.clientWidth < 500) {
+  if (document.documentElement.clientWidth < 500) {
     asideVisible.value = false
   }
 })

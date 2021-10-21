@@ -1,6 +1,6 @@
 <template>
-  <div class="switch">
-    <p v-for="i in 120" :key="i">{{i}}switch</p>
+  <div class="button">
+    buton
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 </script>
 
 <style lang="scss" scoped>
-.switch {
+.button{
   border: 1px solid skyblue;
 }
 </style>
