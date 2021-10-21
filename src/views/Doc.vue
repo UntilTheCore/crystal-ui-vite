@@ -2,7 +2,7 @@
   <div>
     <TopNav />
     <div class="content">
-      <aside :style="{display: asideVisible ? 'block' : 'none'}">
+      <aside :style="{ display: asideVisible ? 'block' : 'none' }">
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -25,30 +25,33 @@
 </template>
 <script setup lang="ts">
 import TopNav from "@/components/TopNav.vue";
-import { inject, reactive, Ref, watch } from "vue";
+import { inject, reactive, Ref, watch, onBeforeUnmount } from "vue";
 
 type Data = {
   clientWidth: number,
 }
 
-const asideVisible = inject<Ref<boolean>>( "asideVisible" );
-const setAsideVisible = inject<(status: boolean) => void>( "setAsideVisible" );
+const asideVisible = inject<Ref<boolean>>("asideVisible");
+const setAsideVisible = inject<(status: boolean) => void>("setAsideVisible");
 
-const data = reactive<Data>( {
+const data = reactive<Data>({
   clientWidth: document.documentElement.clientWidth
-} );
+});
 
-window.addEventListener( "resize", () => {
-  console.log( "resize" );
+const onResize = () => {
   data.clientWidth = document.documentElement.clientWidth;
-} );
+}
 
+window.addEventListener("resize", onResize);
 
-watch( () => data.clientWidth, (newClientWidth) => {
-  console.log( newClientWidth );
-  setAsideVisible && setAsideVisible( newClientWidth > 500 );
-} );
+watch(() => data.clientWidth, (newClientWidth) => {
+  console.log(newClientWidth);
+  setAsideVisible && setAsideVisible(newClientWidth > 500);
+});
 
+onBeforeUnmount(() => {
+  window.removeEventListener("resize", onResize);
+})
 
 </script>
 
