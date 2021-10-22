@@ -73,6 +73,7 @@ onBeforeUnmount(() => {
     /* 实际内容内容区域上、左白边宽度设置 */
     padding-left: 160px;
     padding-top: 60px;
+    transition: all .3s ease-out;
     @media (max-width: 500px) {
       padding-left: 0;
     }
