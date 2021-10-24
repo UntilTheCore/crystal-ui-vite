@@ -1,14 +1,13 @@
 <template>
   <div class="switch">
-    <p v-for="i in 120" :key="i">{{i}}switch</p>
+    <Switch />
   </div>
 </template>
 
 <script setup lang="ts">
+import Switch from "@/lib/Switch.vue";
 </script>
 
 <style lang="scss" scoped>
-.switch {
-  border: 1px solid skyblue;
-}
+.switch {}
 </style>
