@@ -3,7 +3,7 @@
     :class="{checked}"
     @click.stop.capture="toggle"
   >
-    <span></span>
+    <span :class="checked ? 'left' : 'right'"></span>
   </button>
 </template>
 
@@ -13,7 +13,6 @@ import { ref } from "vue";
 const checked = ref( false );
 const toggle = () => {
   checked.value = !checked.value;
-  console.log( checked.value );
 };
 </script>
 
@@ -40,6 +39,19 @@ button {
     background: white;
     border-radius: math.div($h2, 2);
     transition: all .3s;
+  }
+
+  &:active {
+    $animation-w: 4px;
+
+    > span.left {
+      margin-left: -$animation-w;
+      width: calc(#{$h2} + #{$animation-w});
+    }
+
+    > span.right {
+      width: calc(#{$h2} + #{$animation-w});
+    }
   }
 
   &.checked {
