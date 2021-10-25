@@ -19,46 +19,47 @@ const toggle = () => {
 <style lang="scss" scoped>
 @use "sass:math";
 
-$h: 22px;
-$h2: $h - 4px;
+$outer-height: 20px;
+$inner-height: $outer-height - 4px;
 
 button {
-  height: $h;
-  width: $h*2;
+  height: $outer-height;
+  width: $outer-height * 2;
   border: none;
-  background: gray;
-  border-radius: math.div($h2, 2);
+  background: #DCDFE6;
+  border-radius: math.div($outer-height, 2);
   position: relative;
+  cursor: pointer;
 
   span {
     position: absolute;
     top: 2px;
     left: 2px;
-    height: $h2;
-    width: $h2;
+    height: $inner-height;
+    width: $inner-height;
     background: white;
-    border-radius: math.div($h2, 2);
+    border-radius: math.div($inner-height, 2);
     transition: all .3s;
   }
 
   &:active {
-    $animation-w: 4px;
+    $animation-w: 5px;
 
     > span.left {
       margin-left: -$animation-w;
-      width: calc(#{$h2} + #{$animation-w});
+      width: calc(#{$inner-height} + #{$animation-w});
     }
 
     > span.right {
-      width: calc(#{$h2} + #{$animation-w});
+      width: calc(#{$inner-height} + #{$animation-w});
     }
   }
 
   &.checked {
-    background: #42b983;
+    background: #559EFE;
 
     > span {
-      left: calc(100% - #{$h2} - 2px);
+      left: calc(100% - #{$inner-height} - 2px);
     }
   }
 }
