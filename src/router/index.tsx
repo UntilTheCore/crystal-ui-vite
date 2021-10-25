@@ -3,7 +3,7 @@ import Home from "@/views/Home.vue";
 import Doc from "@/views/Doc.vue";
 import DocIndex from "@/views/doc/index.vue";
 import Switch from "@/views/doc/SwitchDemo.vue";
-import Button from "@/views/doc/Button.vue";
+import Button from "@/views/doc/ButtonDemo.vue";
 import Dialog from "@/views/doc/Dialog.vue";
 import Tabs from "@/views/doc/Tabs.vue";
 

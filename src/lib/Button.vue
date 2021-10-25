@@ -1,6 +1,8 @@
 <template>
-  <div class="button">
-    buton
+  <div class="cs-button">
+    <button>
+      <slot />
+    </button>
   </div>
 </template>
 
@@ -8,7 +10,7 @@
 </script>
 
 <style lang="scss" scoped>
-.button{
-  border: 1px solid skyblue;
+.button {
+  border: 1px solid red;
 }
 </style>
