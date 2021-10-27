@@ -1,5 +1,6 @@
 <template>
   <button class="cs-button" :class="classes">
+    <span v-if="loading" class="cs-loading-indicator"></span>
     <slot />
   </button>
 </template>
@@ -13,12 +14,14 @@ type Props = {
   /** 按钮尺寸 */
   size?: "small" | "normal" | "large",
   level?: "main" | "normal" | "danger",
+  loading?: boolean,
 }
 
 const props = withDefaults(defineProps<Props>(), {
   theme: "button",
   size: "normal",
   level: "normal",
+  loading: false,
 });
 
 const classes = computed(() => {
@@ -179,6 +182,27 @@ $grey: grey;
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
+    }
+  }
+
+  > .cs-loading-indicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: cs-indicator-spin 1s infinite linear;
+  }
+
+  @keyframes cs-indicator-spin {
+    0% {
+      transoform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 }
