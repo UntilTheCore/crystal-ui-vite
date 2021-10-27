@@ -1,9 +1,10 @@
 <template>
   <button
-    :class="{checked}"
+    class="cs-switch"
+    :class="{'cs-checked': checked}"
     @click.stop.capture="toggle"
   >
-    <span :class="checked ? 'left' : 'right'"></span>
+    <span></span>
   </button>
 </template>
 
@@ -22,7 +23,7 @@ const toggle = () => {
 $outer-height: 20px;
 $inner-height: $outer-height - 4px;
 
-button {
+.cs-switch {
   height: $outer-height;
   width: $outer-height * 2;
   border: none;
@@ -45,17 +46,17 @@ button {
   &:active {
     $animation-w: 5px;
 
-    > span.left {
-      margin-left: -$animation-w;
+    > span {
       width: calc(#{$inner-height} + #{$animation-w});
     }
 
-    > span.right {
+    &.cs-checked > span {
+      margin-left: -$animation-w;
       width: calc(#{$inner-height} + #{$animation-w});
     }
   }
 
-  &.checked {
+  &.cs-checked {
     background: #559EFE;
 
     > span {

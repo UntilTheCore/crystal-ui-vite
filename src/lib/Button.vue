@@ -1,5 +1,5 @@
 <template>
-  <button class="cs-button" :class="`theme-${theme}`">
+  <button class="cs-button" :class="`cs-button__theme-${theme}`">
     <slot />
   </button>
 </template>
@@ -10,11 +10,11 @@ type Props = {
   theme?: "button" | "link" | "text"
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  theme: 'button'
-})
+const props = withDefaults( defineProps<Props>(), {
+  theme: "button"
+} );
 
-console.log(props.theme);
+console.log( props.theme );
 
 
 </script>
@@ -39,17 +39,21 @@ $radius: 4px;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+
   & + & {
     margin-left: 8px;
   }
+
   &:hover,
   &:focus {
     color: $blue;
     border-color: $blue;
   }
+
   &:focus {
     outline: none;
   }
+
   &::-moz-focus-inner {
     border: 0;
   }
