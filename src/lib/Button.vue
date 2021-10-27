@@ -1,21 +1,30 @@
 <template>
-  <button class="cs-button" :class="`cs-button__theme-${theme}`">
+  <button class="cs-button" :class="classes">
     <slot />
   </button>
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
+
 type Props = {
   /** 按钮主题 */
-  theme?: "button" | "link" | "text"
+  theme?: "button" | "link" | "text",
+  /** 按钮尺寸 */
+  size?: "small" | "normal" | "large"
 }
 
-const props = withDefaults( defineProps<Props>(), {
-  theme: "button"
-} );
+const props = withDefaults(defineProps<Props>(), {
+  theme: "button",
+  size: "normal",
+});
 
-console.log( props.theme );
-
+const classes = computed(() => {
+  return {
+    [`cs-button__theme-${props.theme}`]: props.theme,
+    [`cs-button__size-${props.size}`]: props.size,
+  };
+});
 
 </script>
 
@@ -56,6 +65,25 @@ $radius: 4px;
 
   &::-moz-focus-inner {
     border: 0;
+  }
+
+  &.cs-button__theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.cs-button__theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
   }
 }
 </style>
