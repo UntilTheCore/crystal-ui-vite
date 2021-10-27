@@ -12,7 +12,7 @@ type Props = {
   theme?: "button" | "link" | "text",
   /** 按钮尺寸 */
   size?: "small" | "normal" | "large",
-  level?: "main" | "normal" | "danger"
+  level?: "main" | "normal" | "danger",
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -38,6 +38,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .cs-button {
   box-sizing: border-box;
   height: $h;
@@ -160,6 +161,24 @@ $red: red;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+
+  /* disabled 样式 */
+  &.cs-button__theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.cs-button__theme-link,
+  &.cs-button__theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
