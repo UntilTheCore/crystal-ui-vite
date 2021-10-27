@@ -63,10 +63,12 @@ $radius: 4px;
     outline: none;
   }
 
+  /* 处理在 firefox 下 focus 样式兼容问题 */
   &::-moz-focus-inner {
     border: 0;
   }
 
+  /* 链接主题 */
   &.cs-button__theme-link {
     border-color: transparent;
     box-shadow: none;
@@ -76,6 +78,8 @@ $radius: 4px;
       color: lighten($blue, 10%);
     }
   }
+
+  /* 文本主题 */
   &.cs-button__theme-text {
     border-color: transparent;
     box-shadow: none;
@@ -84,6 +88,20 @@ $radius: 4px;
     &:focus {
       background: darken(white, 5%);
     }
+  }
+
+  /* 小尺寸 */
+  &.cs-button__size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
+  }
+
+  /* 大尺寸 */
+  &.cs-button__size-large {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
   }
 }
 </style>
