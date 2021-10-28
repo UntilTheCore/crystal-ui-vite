@@ -2,11 +2,10 @@
   <div class="dialog-demo">
     <div>dialog示例</div>
     <Button @click="data.visible = true">打开dialog</Button>
-    <Dialog 
-      v-model="data.visible" 
-      :confirm="onConfirm" 
-      :cancel="onCancel" 
-    />
+    <Dialog v-model="data.visible" title="提示" :confirm="onConfirm" :cancel="onCancel">
+      <p>hi</p>
+      <p>hi2</p>
+    </Dialog>
   </div>
 </template>
 

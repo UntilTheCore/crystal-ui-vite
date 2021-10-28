@@ -4,12 +4,11 @@
     <div class="cs-dialog-wrapper">
       <div class="cs-dialog">
         <section class="cs-dialog__header">
-          <p class="cs-dialog__header-title">标题</p>
+          <p class="cs-dialog__header-title">{{ title }}</p>
           <i class="cs-dialog__header-close" @click="onClose"></i>
         </section>
         <section class="cs-dialog__main">
-          <p>第一行</p>
-          <p>第二行</p>
+          <slot />
         </section>
         <section class="cs-dialog__footer">
           <Button level="main" @click="confirm">确定</Button>
@@ -32,6 +31,8 @@ type Props = {
   confirm?: () => boolean,
   /** 点击取消并在关闭 dialog 前触发, 可用于阻止dialog关闭 */
   cancel?: () => boolean,
+  /** dialog 左上角标题 */
+  title?: string,
 }
 
 const emits = defineEmits(['update:modelValue'])
@@ -39,6 +40,7 @@ const emits = defineEmits(['update:modelValue'])
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
   closeOnClickOverlay: true,
+  title: '标题'
 })
 
 const onClose = () => {
