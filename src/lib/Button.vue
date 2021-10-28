@@ -13,7 +13,9 @@ type Props = {
   theme?: "button" | "link" | "text",
   /** 按钮尺寸 */
   size?: "small" | "normal" | "large",
+  /** 提示级别 */
   level?: "main" | "normal" | "danger",
+  /** 加载动画 */
   loading?: boolean,
 }
 
