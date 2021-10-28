@@ -1,24 +1,26 @@
 <template>
   <template v-if="modelValue">
-    <div class="cs-dialog__overlay" @click="onClickOverlay"></div>
-    <div class="cs-dialog-wrapper">
-      <div class="cs-dialog">
-        <section class="cs-dialog__header">
-          <p class="cs-dialog__header-title">
-            <slot v-if="$slots.title" name="title">title</slot>
-            <template v-else>{{ title }}</template>
-          </p>
-          <i class="cs-dialog__header-close" @click="onClose"></i>
-        </section>
-        <section class="cs-dialog__main">
-          <slot></slot>
-        </section>
-        <section class="cs-dialog__footer">
-          <Button level="main" @click="confirm">确定</Button>
-          <Button @click="cancel">取消</Button>
-        </section>
+    <Teleport to="body">
+      <div class="cs-dialog__overlay" @click="onClickOverlay"></div>
+      <div class="cs-dialog-wrapper">
+        <div class="cs-dialog">
+          <section class="cs-dialog__header">
+            <p class="cs-dialog__header-title">
+              <slot v-if="$slots.title" name="title">title</slot>
+              <template v-else>{{ title }}</template>
+            </p>
+            <i class="cs-dialog__header-close" @click="onClose"></i>
+          </section>
+          <section class="cs-dialog__main">
+            <slot></slot>
+          </section>
+          <section class="cs-dialog__footer">
+            <Button level="main" @click="confirm">确定</Button>
+            <Button @click="cancel">取消</Button>
+          </section>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
