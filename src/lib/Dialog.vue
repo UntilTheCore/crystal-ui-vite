@@ -4,11 +4,14 @@
     <div class="cs-dialog-wrapper">
       <div class="cs-dialog">
         <section class="cs-dialog__header">
-          <p class="cs-dialog__header-title">{{ title }}</p>
+          <p class="cs-dialog__header-title">
+            <slot v-if="$slots.title" name="title">title</slot>
+            <template v-else>{{ title }}</template>
+          </p>
           <i class="cs-dialog__header-close" @click="onClose"></i>
         </section>
         <section class="cs-dialog__main">
-          <slot />
+          <slot></slot>
         </section>
         <section class="cs-dialog__footer">
           <Button level="main" @click="confirm">确定</Button>
@@ -31,7 +34,7 @@ type Props = {
   confirm?: () => boolean,
   /** 点击取消并在关闭 dialog 前触发, 可用于阻止dialog关闭 */
   cancel?: () => boolean,
-  /** dialog 左上角标题 */
+  /** dialog 左上角标题，在使用 title slot 时，将失效并以 slot 为准 */
   title?: string,
 }
 

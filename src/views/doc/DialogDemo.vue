@@ -3,8 +3,15 @@
     <div>dialog示例</div>
     <Button @click="data.visible = true">打开dialog</Button>
     <Dialog v-model="data.visible" title="提示" :confirm="onConfirm" :cancel="onCancel">
-      <p>hi</p>
-      <p>hi2</p>
+      <template #default>
+        <div>
+          <p>hi</p>
+          <p>hi2</p>
+        </div>
+      </template>
+      <template #title>
+        <div>标题</div>
+      </template>
     </Dialog>
   </div>
 </template>
