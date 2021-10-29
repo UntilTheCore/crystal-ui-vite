@@ -1,6 +1,5 @@
 <template>
-  <div class="tabs">
-    <p v-for="i in 120" :key="i">{{i}}tabs</p>
+  <div class="cs-tabs">
   </div>
 </template>
 
@@ -8,7 +7,7 @@
 </script>
 
 <style lang="scss" scoped>
-.tabs {
+.cs-tabs{
   border: 1px solid skyblue;
 }
 </style>
