@@ -1,9 +1,11 @@
 <template>
   <div class="cs-tabs">
-    <ul>
-      <li v-for="(title,i) in titles" :key="i + title">{{ title }}</li>
+    <ul class="cs-tabs-nav">
+      <li class="cs-tabs-nav-item" v-for="(title,i) in titles" :key="i + title">{{ title }}</li>
     </ul>
-    <component v-for="(tab, i) in defaultSlots" :key="i" :is="tab"></component>
+    <div class="cs-tabs-content">
+      <component v-for="(tab, i) in defaultSlots" :key="i" :is="tab"></component>
+    </div>
   </div>
 </template>
 
@@ -35,4 +37,32 @@ if (slots.default?.()) {
 </script>
 
 <style lang="scss" scoped>
+$blue: #40a9ff;
+$color: #333;
+$border-color: #d9d9d9;
+.cs-tabs {
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+
+    &-item {
+      padding: 8px 0;
+      margin: 0 16px;
+      cursor: pointer;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.selected {
+        color: $blue;
+      }
+    }
+  }
+
+  &-content {
+    padding: 8px 0;
+  }
+}
 </style>
