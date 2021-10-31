@@ -6,7 +6,7 @@
         v-for="(title,i) in titles"
         :key="i + title"
         :class="{ selected: title === selected }"
-        :ref="el => { if (el) divs[i] = el }"
+        :ref="el => { if (title === selected && el) navItem = el }"
         @click="select(title)"
       >{{ title }}</div>
       <i class="cs-tabs-nav-indicator" ref="refIndicator"></i>
@@ -28,11 +28,9 @@ type Props = {
 }
 
 const emits = defineEmits(['update:selected'])
-
 const props = defineProps<Props>();
 
-const divs = ref<(Element | ComponentPublicInstance)[]>([]);
-
+const navItem = ref<Element | ComponentPublicInstance>();
 const slots = useSlots();
 const refIndicator = ref<HTMLDivElement>();
 
@@ -59,12 +57,9 @@ const select = (title: string) => {
   emits("update:selected", title);
 }
 
+/** 通过被点击nav的样式关系，设置底部导航条的样式 */
 watchPostEffect(() => {
-  const el = divs.value.filter(item => {
-    return (item as HTMLDivElement).innerText.includes(props.selected as string);
-  })[0]
-
-  const _el = (el as HTMLDivElement);
+  const _el = navItem.value as HTMLDivElement;
   const { left: currentLeft } = _el.getBoundingClientRect();
   const { left: parentLeft } = refIndicator.value!.parentElement!.getBoundingClientRect();
   if (refIndicator && refIndicator.value) {
