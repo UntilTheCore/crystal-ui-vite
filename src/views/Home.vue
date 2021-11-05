@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-wrapper">
     <TopNav />
     <div class="banner">
       <h1>轱辘UI</h1>
@@ -16,24 +16,34 @@ import TopNav from '@/components/TopNav.vue';
 </script>
 <style lang="scss" scoped>
 @use 'sass:math';
+$green: #02bcb0;
+$color: #fff;
+$border-radius: 4px;
+
+.home-wrapper {
+  background: linear-gradient(
+    145deg,
+    rgba(113, 196, 254, 1) 0%,
+    rgba(169, 239, 253, 1) 100%
+  );
+}
 .banner {
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
+  color: $color;
   > .actions {
     padding: 8px 0;
+    color: #666;
+
     a {
       margin: 0 8px;
       background: #fff;
       display: inline-block;
-      $h: 28px;
-      height: $h;
-      line-height: $h;
-      border-radius: math.div($h, 2);
-      padding: 0 8px;
+      border-radius: $border-radius;
+      padding: 4px 12px;
     }
   }
 }

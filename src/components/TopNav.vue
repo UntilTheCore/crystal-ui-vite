@@ -17,7 +17,6 @@ const toggleAsideVisible = inject<() => void>("toggleAsideVisible");
 
 <style lang="scss" scoped>
 .topnav {
-  background: pink;
   display: flex;
   align-items: center;
   position: fixed;
