@@ -1,16 +1,22 @@
 <template>
   <div class="topnav">
-    <span class="toggle-btn" @click.stop="toggleAsideVisible"></span>
-    <div class="logo">LOGO</div>
-    <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
-    </ul>
+    <Icon
+      name="crumb"
+      class="toggle-btn"
+      width="1.5em"
+      height="1.5em"
+      @click.stop="toggleAsideVisible"
+    />
+    <router-link to="/" class="logo">
+      <Icon name="crystal" width="1.5em" height="1.5em"></Icon>
+    </router-link>
+    <router-link to="/doc">文档</router-link>
   </div>
 </template>
 
 <script setup lang="ts">
 import { inject } from "vue";
+import Icon from "./Icon.vue";
 
 const toggleAsideVisible = inject<() => void>("toggleAsideVisible");
 </script>
@@ -27,13 +33,19 @@ const toggleAsideVisible = inject<() => void>("toggleAsideVisible");
   height: var(--navbar-height);
   padding: 0 15px;
 
+  a {
+    color: #555;
+  }
+
   > .logo {
     height: 20px;
     max-width: 6em;
     margin-right: auto;
-    cursor: pointer;
+    margin-top: -5px;
     max-height: 20px;
     transition: all 0.3s;
+    margin-left: calc(var(--asidebar-width) / 2 - 15px);
+    transform: translateX(-50%);
   }
 
   > .menu {
@@ -49,10 +61,8 @@ const toggleAsideVisible = inject<() => void>("toggleAsideVisible");
   }
 
   > .toggle-btn {
+    position: absolute;
     display: none;
-    width: 20px;
-    height: 20px;
-    background-color: skyblue;
   }
 
   @media screen and (max-width: 500px) {
