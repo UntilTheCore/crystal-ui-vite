@@ -64,15 +64,23 @@ aside {
   background: lightblue;
   width: var(--asidebar-width);
   height: 100vh;
-  padding: calc(var(--navbar-height) + 10px) 16px 16px;
+  padding: calc(var(--navbar-height) + 10px) 0 16px;
 
   > h2 {
     margin-bottom: 4px;
+    padding: 0 16px;
   }
 
   > ol {
     > li {
-      padding: 4px 0;
+      a {
+        display: inline-block;
+        padding: 4px 16px;
+        width: 100%;
+      }
+      .router-link-active {
+        background-color: #fff;
+      }
     }
   }
 }
