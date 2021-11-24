@@ -1,24 +1,59 @@
 <template>
   <aside>
-    <h2>组件列表</h2>
-    <ol>
-      <li>
-        <router-link to="/doc/switch">Switch 组件</router-link>
-      </li>
-      <li>
-        <router-link to="/doc/button">Button 组件</router-link>
-      </li>
-      <li>
-        <router-link to="/doc/dialog">Dialog 组件</router-link>
-      </li>
-      <li>
-        <router-link to="/doc/tabs">Tabs 组件</router-link>
-      </li>
-    </ol>
+    <template v-for="(item, index) in links" :key="index">
+      <h2>{{ item.title }}</h2>
+      <ol>
+        <li v-for="(link, i) in item.links" :key="i">
+          <router-link :to="link.link">{{ link.name }}</router-link>
+        </li>
+      </ol>
+    </template>
   </aside>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
+const links = ref([
+  {
+    title: '文档',
+    links: [
+      {
+        name: '介绍',
+        link: '/doc/intro'
+      },
+      {
+        name: '安装',
+        link: '/doc/install'
+      },
+      {
+        name: '开始使用',
+        link: '/doc/get-start'
+      },
+    ]
+  },
+  {
+    title: '组件',
+    links: [
+      {
+        name: 'Switch 组件',
+        link: '/doc/switch'
+      },
+      {
+        name: 'Button 组件',
+        link: '/doc/button'
+      },
+      {
+        name: 'Dialog 组件',
+        link: '/doc/dialog'
+      },
+      {
+        name: 'Tabs 组件',
+        link: '/doc/tabs'
+      },
+    ]
+  },
+])
 </script>
 
 <style lang="scss" scoped>
