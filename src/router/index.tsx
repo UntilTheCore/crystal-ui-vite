@@ -2,13 +2,13 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "@/views/Home.vue";
 import Doc from "@/views/Doc.vue";
 import DocIndex from "@/views/doc/index.vue";
-import Switch from "@/views/doc/SwitchDemo.vue";
-import Button from "@/views/doc/ButtonDemo.vue";
-import Dialog from "@/views/doc/DialogDemo.vue";
-import Tabs from "@/views/doc/TabsDemo.vue";
-import Intro from "@/views/doc/intro/index.vue";
-import GetStart from "@/views/doc/Intro/GetStart.vue";
-import Install from "@/views/doc/Intro/Install.vue";
+import Switch from "@/views/doc/component/SwitchDemo.vue";
+import Button from "@/views/doc/component/ButtonDemo.vue";
+import Dialog from "@/views/doc/component/DialogDemo.vue";
+import Tabs from "@/views/doc/component/TabsDemo.vue";
+import Intro from "@/views/doc/document/index.vue";
+import GetStart from "@/views/doc/document/GetStart.vue";
+import Install from "@/views/doc/document/Install.vue";
 
 const history = createWebHashHistory();
 const router = createRouter({
