@@ -39,6 +39,11 @@
   resolved "https://registry.npm.taobao.org/@emmetio/scanner/download/@emmetio/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha1-Blsq9iM/50dNRII+PeuJckr0K18=
 
+"@types/marked@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.npmmirror.com/@types/marked/download/@types/marked-4.0.1.tgz?cache=0&sync_timestamp=1637197369789&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fmarked%2Fdownload%2F%40types%2Fmarked-4.0.1.tgz#d588a7bbc4d6551c5e75249bc106ffda96ae33c5"
+  integrity sha512-ZigEmCWdNUU7IjZEuQ/iaimYdDHWHfTe3kg8ORfKjyGYd9RWumPoOJRQXB0bO+XLkNwzCthW3wUIQtANaEZ1ag==
+
 "@types/node@^16.11.1":
   version "16.11.1"
   resolved "https://registry.npmmirror.com/@types/node/download/@types/node-16.11.1.tgz?cache=0&sync_timestamp=1634443414534&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.11.1.tgz#2e50a649a50fc403433a14f829eface1a3443e97"
@@ -599,6 +604,11 @@ magic-string@^0.25.7:
   integrity sha1-P0l9b9NMZpxnmNy4IfLvMfVEUFE=
   dependencies:
     sourcemap-codec "^1.4.4"
+
+marked@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.npmmirror.com/marked/download/marked-4.0.5.tgz#85f46937f6a4616de7cbe0e1433e1640c320c729"
+  integrity sha512-eUToMA5d5lunnipkCN7zFD0RiunCF2Uo6bImEt/Qx8LZMW7oPXTw7R+f+M5V3eS7164HjEDPfW8/TrefuFhDfw==
 
 nanoid@^3.1.28:
   version "3.1.30"
