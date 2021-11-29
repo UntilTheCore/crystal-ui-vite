@@ -28,5 +28,10 @@ export function vitePluginMd(): Plugin {
         }
       });
     },
+    transform(code, id) {
+      if (id.endsWith(".md")) {
+        return mdToJs(code);
+      }
+    },
   };
 }
