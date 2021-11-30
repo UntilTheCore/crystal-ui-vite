@@ -1,4 +1,3 @@
-// @ts-nocheck
 import path from "path";
 import fs from "fs";
 import { marked } from "marked";
@@ -9,7 +8,6 @@ const mdToJs = (str: string) => {
   return `export default ${content}`;
 };
 
-// vite-plugin-md
 export function vitePluginMd(): Plugin {
   return {
     name: "vite-plugin-md",
@@ -28,6 +26,7 @@ export function vitePluginMd(): Plugin {
         }
       });
     },
+    // 用于 build
     transform(code, id) {
       if (id.endsWith(".md")) {
         return mdToJs(code);
