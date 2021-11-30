@@ -9,6 +9,10 @@ import Dialog from "@/views/doc/component/DialogDemo.vue";
 import Tabs from "@/views/doc/component/TabsDemo.vue";
 import Markdown from "@/components/Markdown.vue";
 
+const markdown = (filename: string) => {
+  return h(Markdown, { path: `../markdown/${filename}.md`, key: filename });
+};
+
 const history = createWebHashHistory();
 const router = createRouter({
   history,
@@ -27,18 +31,15 @@ const router = createRouter({
         },
         {
           path: "intro",
-          component: h(Markdown, { path: "../markdown/intro.md", key: "1" }),
+          component: markdown("intro"),
         },
         {
           path: "get-start",
-          component: h(Markdown, {
-            path: "../markdown/get-start.md",
-            key: "2",
-          }),
+          component: markdown("get-start"),
         },
         {
           path: "install",
-          component: h(Markdown, { path: "../markdown/install.md", key: "3" }),
+          component: markdown("install"),
         },
         {
           path: "switch",
