@@ -1,19 +1,17 @@
 <template>
-  <button
-    class="cs-switch"
-    :class="{'cs-checked': checked}"
-    @click.stop.capture="toggle"
-  >
+  <button class="cs-switch" :class="{ 'cs-checked': modelValue }" @click.stop.capture="toggle">
     <span></span>
   </button>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+const emits = defineEmits(["update:modelValue"])
+const props = defineProps<{
+  modelValue: boolean
+}>()
 
-const checked = ref( false );
 const toggle = () => {
-  checked.value = !checked.value;
+  emits("update:modelValue", !props.modelValue)
 };
 </script>
 
@@ -27,7 +25,7 @@ $inner-height: $outer-height - 4px;
   height: $outer-height;
   width: $outer-height * 2;
   border: none;
-  background: #DCDFE6;
+  background: #dcdfe6;
   border-radius: math.div($outer-height, 2);
   position: relative;
   cursor: pointer;
@@ -40,7 +38,7 @@ $inner-height: $outer-height - 4px;
     width: $inner-height;
     background: white;
     border-radius: math.div($inner-height, 2);
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   &:active {
@@ -57,7 +55,7 @@ $inner-height: $outer-height - 4px;
   }
 
   &.cs-checked {
-    background: #559EFE;
+    background: #559efe;
 
     > span {
       left: calc(100% - #{$inner-height} - 2px);
