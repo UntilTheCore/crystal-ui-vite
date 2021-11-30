@@ -1,13 +1,7 @@
 <template>
-  <article class="markdown-body" v-html="md"></article>
+  <Markdown path="../markdown/install.md"></Markdown>
 </template>
 
 <script setup lang="ts">
-import md from '@/markdown/install.md';
+import Markdown from '@/components/Markdown.vue';
 </script>
-
-<style lang="scss" scoped>
-.getstart {
-  border: 1px solid skyblue;
-}
-</style>

@@ -1,23 +1,7 @@
 <template>
-  <article class="markdown-body" v-html="md"></article>
+  <Markdown path="../markdown/intro.md"></Markdown>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@vue/runtime-core';
-import md from '@/markdown/intro.md';
-
-export default defineComponent({
-  data() {
-    return {
-      md
-    }
-  }
-})
-
+<script setup lang="ts">
+import Markdown from '@/components/Markdown.vue';
 </script>
-
-<style lang="scss" scoped>
-.intro {
-  border: 1px solid skyblue;
-}
-</style>
