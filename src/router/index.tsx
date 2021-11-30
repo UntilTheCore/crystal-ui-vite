@@ -10,7 +10,7 @@ import Tabs from "@/views/doc/component/TabsDemo.vue";
 import Markdown from "@/components/Markdown.vue";
 
 const markdown = (filename: string) => {
-  return h(Markdown, { path: `../markdown/${filename}.md`, key: filename });
+  return h(Markdown, { filename, key: filename });
 };
 
 const history = createWebHashHistory();
