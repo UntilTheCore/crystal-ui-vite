@@ -2,16 +2,13 @@
   <div>
     <h1>Switch 组件示例</h1>
     <div class="demo">
-      <h2>常规用法</h2>
+      <h2>{{ Switch1Demo.__sourceTitle }}</h2>
       <div class="demo-component">
         <Switch1Demo />
       </div>
-      <!--       <div class="demo-actions">
-        <Button>查看代码</Button>
-      </div>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
-      </div>-->
+        <pre>{{ Switch1Demo.__sourceCode }}</pre>
+      </div>
     </div>
     <div class="demo">
       <h2>支持 disabled</h2>
@@ -47,7 +44,7 @@ export default {
     const bool = ref(false)
     console.dir(Switch1Demo);
     return {
-      bool
+      bool, Switch1Demo
     }
   }
 }
