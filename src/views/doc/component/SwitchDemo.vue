@@ -16,7 +16,7 @@
     <div class="demo">
       <h2>支持 disabled</h2>
       <div class="demo-component">
-        <Switch v-model="bool" disabled />
+        <Switch2Demo />
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
@@ -35,14 +35,17 @@ import {
   ref
 } from 'vue'
 import Switch1Demo from './Switch1Demo.vue'
+import Switch2Demo from './Switch2Demo.vue'
 export default {
   components: {
     Switch,
     Button,
-    Switch1Demo
+    Switch1Demo,
+    Switch2Demo,
   },
   setup() {
     const bool = ref(false)
+    console.dir(Switch1Demo);
     return {
       bool
     }

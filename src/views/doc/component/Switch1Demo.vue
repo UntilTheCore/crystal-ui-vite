@@ -1,3 +1,9 @@
+<demo>
+{
+  "title": "switch demo 1"
+}
+</demo>
+
 <template>
   <Switch v-model="bool"></Switch>
 </template>

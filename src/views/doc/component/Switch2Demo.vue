@@ -1,3 +1,4 @@
+
 <template>
   <Switch v-model="bool" disabled></Switch>
 </template>
