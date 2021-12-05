@@ -1,4 +1,4 @@
-
+<demo>支持 disable</demo>
 <template>
   <Switch v-model="bool" disabled></Switch>
 </template>
