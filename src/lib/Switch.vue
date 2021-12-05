@@ -7,7 +7,7 @@
 <script setup lang="ts">
 const emits = defineEmits(["update:modelValue"])
 const props = defineProps<{
-  modelValue: boolean
+  modelValue: boolean,
 }>()
 
 const toggle = () => {
@@ -29,6 +29,10 @@ $inner-height: $outer-height - 4px;
   border-radius: math.div($outer-height, 2);
   position: relative;
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 
   span {
     position: absolute;
