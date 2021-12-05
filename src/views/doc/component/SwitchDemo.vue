@@ -7,7 +7,7 @@
         <Switch1Demo />
       </div>
       <div class="demo-code">
-        <pre>{{ Switch1Demo.__sourceCode }}</pre>
+        <pre class="language-html" v-html="Prism.highlight(Switch1Demo.__sourceCode, Prism.languages.html, 'html')" />
       </div>
     </div>
     <div class="demo">
@@ -16,16 +16,22 @@
         <Switch2Demo />
       </div>
       <div class="demo-code">
-        <pre>{{ Switch2Demo.__sourceCode }}</pre>
+        <pre class="language-html" v-html="Prism.highlight(Switch2Demo.__sourceCode, Prism.languages.html, 'html')" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Switch1Demo from './Switch1Demo.vue'
-import Switch2Demo from './Switch2Demo.vue'
+import Switch1Demo from './Switch1Demo.vue';
+import Switch2Demo from './Switch2Demo.vue';
+import Prism from 'prismjs';
+// 暗色主题
+// import "prismjs/themes/prism-okaidia.css";
+import "prismjs/themes/prism.css";
+
 </script>
+
 
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
