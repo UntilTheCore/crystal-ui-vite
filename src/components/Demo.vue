@@ -4,7 +4,10 @@
     <div class="demo-component">
       <component :is="component" />
     </div>
-    <div class="demo-code">
+    <div class="demo-actions">
+      <Button @click="toggleCode">查看代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisiable">
       <pre class="language-html" v-html="html" />
     </div>
   </div>
@@ -15,7 +18,8 @@ import Prism from 'prismjs';
 // 暗色主题
 // import "prismjs/themes/prism-okaidia.css";
 import "prismjs/themes/prism.css";
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
+import Button from '@/lib/Button.vue';
 
 const props = defineProps<{
   component: object & { [key: string]: string },
@@ -24,6 +28,10 @@ const props = defineProps<{
 const html = computed(() => {
   return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
 })
+
+const codeVisiable = ref(false);
+
+const toggleCode = () => codeVisiable.value = !codeVisiable.value
 </script>
 
 <style lang="scss" scoped>
