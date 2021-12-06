@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Switch 组件示例</h1>
+    <h1>Switch 开关</h1>
+    <p>表示两种相互对立的状态间的切换，多用于触发「开/关」。</p>
     <Demo :component="Switch1Demo" />
     <Demo :component="Switch2Demo" />
   </div>
