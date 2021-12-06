@@ -8,12 +8,12 @@
       :ok="onConfirm"
       :cancel="onCancel"
     >
-      <template #content>
-        <strong>hi</strong>
-        <div>hi2</div>
-      </template>
       <template #title>
         <strong>加粗的标题</strong>
+      </template>
+      <template #default>
+        <strong>hi</strong>
+        <div>hi2</div>
       </template>
     </Dialog>
   </div>

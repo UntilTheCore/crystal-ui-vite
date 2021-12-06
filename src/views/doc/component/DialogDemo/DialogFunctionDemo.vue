@@ -21,9 +21,3 @@ const onOpenDialog = () => {
   })
 }
 </script>
-
-<style lang="scss" scoped>
-.dialogfunctiondemo {
-  border: 1px solid skyblue;
-}
-</style>
