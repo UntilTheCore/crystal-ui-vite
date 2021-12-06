@@ -36,19 +36,19 @@ const links = ref([
     title: '组件',
     links: [
       {
-        name: 'Switch 组件',
+        name: 'Switch 开关',
         link: '/doc/switch'
       },
       {
-        name: 'Button 组件',
+        name: 'Button 按钮',
         link: '/doc/button'
       },
       {
-        name: 'Dialog 组件',
+        name: 'Dialog 对话框',
         link: '/doc/dialog'
       },
       {
-        name: 'Tabs 组件',
+        name: 'Tabs 标签页',
         link: '/doc/tabs'
       },
     ]
