@@ -65,6 +65,7 @@ aside {
   width: var(--asidebar-width);
   height: 100vh;
   padding: calc(var(--navbar-height) + 10px) 0 16px;
+  z-index: 999;
 
   > h2 {
     margin-bottom: 4px;
