@@ -10,7 +10,7 @@
     <router-link to="/" class="logo">
       <Icon name="crystal" width="1.5em" height="1.5em"></Icon>
     </router-link>
-    <router-link to="/doc">文档</router-link>
+    <router-link to="/doc/intro">文档</router-link>
   </div>
 </template>
 

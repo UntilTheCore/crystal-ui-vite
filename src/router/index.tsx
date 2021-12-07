@@ -2,7 +2,6 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import { h } from "vue";
 import Home from "@/views/Home.vue";
 import Doc from "@/views/Doc.vue";
-import DocIndex from "@/views/doc/index.vue";
 import Switch from "@/views/doc/component/SwitchDemo.vue";
 import Button from "@/views/doc/component/ButtonDemo.vue";
 import Dialog from "@/views/doc/component/DialogDemo.vue";
@@ -24,11 +23,8 @@ const router = createRouter({
     {
       path: "/doc",
       component: Doc,
+      redirect: "/doc/intro",
       children: [
-        {
-          path: "",
-          component: DocIndex,
-        },
         {
           path: "intro",
           component: markdown("intro"),
