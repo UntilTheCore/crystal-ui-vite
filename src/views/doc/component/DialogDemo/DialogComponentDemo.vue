@@ -5,7 +5,7 @@
     <Dialog
       v-model="dialogVisiable"
       :closeOnClickOverlay="false"
-      :ok="onConfirm"
+      :confirm="onConfirm"
       :cancel="onCancel"
     >
       <template #title>
