@@ -1,10 +1,19 @@
 {
-  "name": "crystal-ui-vite",
-  "version": "0.0.0",
+  "name": "vue-crystal-ui",
+  "version": "0.0.1",
+  "files": [
+    "dist/lib/*"
+  ],
+  "main": "dist/lib/crystal.js",
+  "module": "dist/lib/crystal.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "build:crystal": "npx rollup -c"
+  },
+  "resolutions": {
+    "node-sass": "npm:sass@1.26.11"
   },
   "dependencies": {
     "github-markdown-css": "^5.0.0",
