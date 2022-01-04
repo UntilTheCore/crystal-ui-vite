@@ -1,9 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "husky": "^7.0.4"
+    "eslint": "^8.6.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.5"
   }
 }

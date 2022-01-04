@@ -10,9 +10,13 @@
   },
   "keywords": [
     "crystal-ui",
-    "eslint"
+    "eslint",
+    "eslintconfig"
   ],
   "author": "untilthecore",
   "license": "MIT",
-  "homepage": "https://github.com/UntilTheCore/crystal-ui-vite#readme"
+  "homepage": "https://github.com/UntilTheCore/crystal-ui-vite#readme",
+  "devDependencies": {
+    "eslint": "^8.6.0"
+  }
 }
