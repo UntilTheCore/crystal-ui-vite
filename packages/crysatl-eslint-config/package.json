@@ -1,0 +1,18 @@
+{
+  "name": "@crystal/eslint-config",
+  "version": "0.0.1",
+  "description": "eslint config of crystal",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UntilTheCore/crystal-ui-vite.git",
+    "directory": "packages/crystal-eslint-config"
+  },
+  "keywords": [
+    "crystal-ui",
+    "eslint"
+  ],
+  "author": "untilthecore",
+  "license": "MIT",
+  "homepage": "https://github.com/UntilTheCore/crystal-ui-vite#readme"
+}
