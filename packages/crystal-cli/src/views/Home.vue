@@ -2,8 +2,8 @@
   <div class="home-wrapper">
     <Icon name="crystal-white" width="1.5em" height="1.5em"></Icon>
     <div class="banner">
-      <h1>轱辘UI</h1>
-      <h2>一个厉害的 UI 框架</h2>
+      <h1>Crystal UI</h1>
+      <h2>一个基于 Vue3 的 UI 组件库</h2>
       <p class="actions">
         <a href="https://github.com/UntilTheCore/crystal-ui-vite" target="_blank">GitHub</a>
         <router-link to="/doc">开始</router-link>
