@@ -27,6 +27,8 @@
     "@types/marked": "^4.0.1",
     "@types/node": "^16.11.1",
     "@vitejs/plugin-vue": "^1.9.3",
+    "@vue/compiler-sfc": "^3.2.26",
+    "esbuild": "^0.14.10",
     "marked": "^4.0.5",
     "rollup": "^2.60.2",
     "rollup-plugin-esbuild": "4.7.2",
