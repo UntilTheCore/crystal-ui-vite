@@ -1,7 +1,15 @@
+# env
 **/node_modules
-.DS_Store
+
+# build dir
 **/dist
 dist-ssr
 *.local
+
+# ide
+.DS_Store
 **/.vscode
 **/.idea
+
+# package manager
+**/.pnpm-debug.log
